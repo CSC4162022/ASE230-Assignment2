@@ -22,9 +22,7 @@ const groupInfo=[
         'year' => '&#9314;'
     ]
 ];
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -38,6 +36,7 @@ const groupInfo=[
     <title><?= 'ASE 230 - class of Fall 2022' ?></title>
 </head>
 <body>
+
 
     <div class="container text-center">
         <h1><?= 'This is ASE 230 - class of Fall 2022' ?></h1>
@@ -53,10 +52,10 @@ const groupInfo=[
                 </div>
             </div>
         </div>
-
         <div class="row">
+
         <?php
-        //print the array of student information
+
         function printStudentInfo() {
 
             for($i=0;$i<count(groupInfo);$i++){
