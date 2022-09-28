@@ -25,6 +25,7 @@ const groupInfo=[
 
 ?>
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,7 +38,6 @@ const groupInfo=[
     <title><?= 'ASE 230 - class of Fall 2022' ?></title>
 </head>
 <body>
-
 
     <div class="container text-center">
         <h1><?= 'This is ASE 230 - class of Fall 2022' ?></h1>
@@ -53,39 +53,43 @@ const groupInfo=[
                 </div>
             </div>
         </div>
+
         <div class="row">
+        <?php
+        //print the array of student information
+        function printStudentInfo() {
 
-    <?php
+            for($i=0;$i<count(groupInfo);$i++){
+                ?>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
 
-    function printStudentInfo() {
+                        <div class="advisor_thumb">
+                            <a href="detail.php"><img src="https://bootdey.com/img/Content/avatar/<?=groupInfo[$i]['picture']?>" alt=""></a>
+                            <div class="social-info">
+                                <a href="detail.php"><i class="fa fa-facebook"></i></a>
+                                <a href="detail.php"><i class="fa fa-twitter"></i></a>
+                                <a href="detail.php"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
 
-        for($i=0;$i<count(groupInfo);$i++){
-        ?>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-
-            <div class="advisor_thumb"><a href="detail.php"><img src="https://bootdey.com/img/Content/avatar/<?=groupInfo[$i]['picture']?>" alt=""></a>
-                <div class="social-info"><a href="detail.php"><i class="fa fa-facebook"></i></a><a href="detail.php"><i class="fa fa-twitter"></i></a><a href="detail.php"><i class="fa fa-linkedin"></i></a></div>
-             </div>
-
-             <div class="single_advisor_details_info">
-                 <h6><?= groupInfo[$i]['name'] ?></h6>
-                 <h6 class="designation"><?=groupInfo[$i]['designation']?></h6>
-                 <h6>Year: <?=groupInfo[$i]['year']?></h6>
-                 <p><?=  groupInfo[$i]['gender'] ?></p>
-                 <a href="detail.php?index=<?=$i?>">Detail</a>
-             </div>
+                        <div class="single_advisor_details_info">
+                            <h6><?= groupInfo[$i]['name'] ?></h6>
+                            <h6 class="designation"><?=groupInfo[$i]['designation']?></h6>
+                            <h6>Year: <?=groupInfo[$i]['year']?></h6>
+                            <p><?=  groupInfo[$i]['gender'] ?></p>
+                            <a href="detail.php?index=<?=$i?>">Detail</a>
+                        </div>
+                    </div>
                 </div>
-             </div>
-            <?php
+                <?php
+            }
         }
-    }
         printStudentInfo();
-    ?>
+        ?>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
-
